@@ -1,0 +1,26 @@
+﻿@page
+@using MovieDb.Data
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>CODE Movie DB</h2>
+
+<hr />
+
+<p>Available Movies in the database:</p>
+
+@if (Model.Movies.Count() > 0)
+{
+    <ul>
+        @foreach (Movie movie in @Model.Movies)
+        {
+            <li>@movie.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No movies found.</p>
+}
